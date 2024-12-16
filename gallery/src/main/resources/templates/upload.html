@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image Upload and Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+    <h1 class="text-center">Upload and View Images</h1>
+
+    <!-- Display Upload Message -->
+    <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+
+    <!-- Upload Form -->
+    <form method="post" action="/photos/upload" enctype="multipart/form-data" class="mb-4">
+        <div class="mb-3">
+            <label for="file" class="form-label">Choose Image</label>
+            <input type="file" class="form-control" id="file" name="file" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
+    <!-- Image Gallery -->
+    <h2 class="text-center">Image Gallery</h2>
+    <div class="row">
+        <div class="col-md-3" th:each="photo : ${photos}">
+            <div class="card mb-3">
+                <img th:src="@{/photos/view/{id}(id=${photo.id})}" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${photo.imageName}"></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

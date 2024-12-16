@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Clinic</title>
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="form-container">
+    <form th:action="@{/clinics}" th:object="${clinic}" method="post">
+        <h1>Add Clinic</h1> <!-- Form Header -->
+
+        <!-- Clinic Name -->
+        <label for="clinicName"><i class="fas fa-clinic-medical"></i> Clinic Name:</label>
+        <input type="text" id="clinicName" th:field="*{clinicName}" placeholder="Enter Clinic Name" required>
+
+        <!-- Doctor Name -->
+        <label for="doctorName"><i class="fas fa-user-md"></i> Doctor Name:</label>
+        <input type="text" id="doctorName" th:field="*{doctorName}" placeholder="Enter Doctor Name" required>
+
+        <!-- Clinic Number -->
+        <label for="clinicNumber"><i class="fas fa-hashtag"></i> Clinic Number:</label>
+        <input type="number" id="clinicNumber" th:field="*{clinicNumber}" placeholder="Enter Clinic Number" required>
+
+        <!-- Location -->
+        <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
+        <input type="text" id="location" th:field="*{location}" placeholder="Enter Location" required>
+
+        <!-- Number of Patients -->
+        <label for="numberOfPatients"><i class="fas fa-users"></i> Number of Patients:</label>
+        <input type="number" id="numberOfPatients" th:field="*{numberOfPatient}" placeholder="Enter Number of Patients" required>
+
+        <!-- Revenue -->
+        <label for="revenue"><i class="fas fa-dollar-sign"></i> Revenue:</label>
+        <input type="number" step="0.01" id="revenue" th:field="*{revenue}" placeholder="Enter Revenue" required>
+
+        <!-- Submit Button -->
+        <button type="submit" class="save-btn"><i class="fas fa-save"></i> Save</button>
+    </form>
+</div>
+</body>
+</html>

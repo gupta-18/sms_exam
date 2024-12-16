@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Clinic</title>
+    <link rel="stylesheet" href="/css/updateform.css">
+</head>
+<body>
+<div th:if="${successMessage}" style="color: green;">
+    <p th:text="${successMessage}"></p>
+</div>
+<div th:if="${errorMessage}" style="color: red;">
+    <p th:text="${errorMessage}"></p>
+</div>
+
+<form  th:action="@{/clinics/update}" method="post">
+    <h1>Update Clinic</h1>
+
+    <!-- Clinic ID (Read-Only) -->
+    <div>
+        <label for="clinicId">Clinic ID:</label>
+        <input type="text" id="clinicId" name="id" th:value="${clinic.id}" readonly required>
+    </div>
+
+    <!-- Clinic Name -->
+    <div>
+        <label for="clinicName">Clinic Name:</label>
+        <input type="text" id="clinicName" name="clinicName" th:value="${clinic.clinicName}" required>
+    </div>
+
+    <!-- Doctor Name -->
+    <div>
+        <label for="doctorName">Doctor Name:</label>
+        <input type="text" id="doctorName" name="doctorName" th:value="${clinic.doctorName}" required>
+    </div>
+
+    <!-- Clinic Number -->
+    <div>
+        <label for="clinicNumber">Clinic Number:</label>
+        <input type="number" id="clinicNumber" name="clinicNumber" th:value="${clinic.clinicNumber}" required>
+    </div>
+
+    <!-- Location -->
+    <div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" th:value="${clinic.location}" required>
+    </div>
+
+    <!-- Number of Patients -->
+    <div>
+        <label for="numberOfPatients">Number of Patients:</label>
+        <input type="number" id="numberOfPatients" name="numberOfPatient" th:value="${clinic.numberOfPatient}" required>
+    </div>
+
+    <!-- Revenue -->
+    <div>
+        <label for="revenue">Revenue:</label>
+        <input type="number" step="0.01" id="revenue" name="revenue" th:value="${clinic.revenue}" required>
+    </div>
+
+    <!-- Submit Button -->
+    <div>
+        <button type="submit">Update</button>
+    </div>
+</form>
+
+</body>
+</html>

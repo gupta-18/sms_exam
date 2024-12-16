@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Employees</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo">TAVWISH</div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li class="active"><a href="#"><i class="fas fa-clinic-medical"></i> Clinic</a></li>
+                <li><a href="#"><i class="fas fa-user-md"></i> Doctors</a></li>
+                <li><a href="#"><i class="fas fa-user-nurse"></i> Nurse</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Patients</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <div class="header">
+            <h1>Clinics</h1>
+            <a href="/clinics/add" class="add-user">+ Add User</a>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Clinic Name</th>
+                <th>Doctor Name</th>
+                <th>Clinic Number</th>
+                <th>Location</th>
+                <th>Patient Number</th>
+                <th>Revenue</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="clinic : ${clinics}">
+                <td th:text="${clinic.id}"></td>
+                <td th:text="${clinic.clinicName}"></td>
+                <td th:text="${clinic.doctorName}"></td>
+                <td th:text="${clinic.clinicNumber}"></td>
+                <td th:text="${clinic.location}"></td>
+                <td th:text="${clinic.NumberOfPatient}"></td>
+                <td th:text="${clinic.revenue}"></td>
+                <td>
+                    <a th:href="@{'/clinics/edit/' + ${clinic.id}}" class="edit-btn">Edit</a>
+                    <a th:href="@{'/clinics/delete/' + ${clinic.id}}" class="delete-btn">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
+</body>
+</html>
