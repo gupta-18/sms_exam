@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="/css/user/registration.css" />
+</head>
+<body>
+<div class="container">
+    <h2>Update Form</h2>
+    <!--    th:action="@{/admin/dashboard/usermanagment/update"-->
+    <!--    <form id="registrationForm" th:href="'/admin/dashboard/usermanagement/update/'+ ${customerDetalis.id}" method="post" >-->
+    <form id="registrationForm" th:action="'/admin/dashboard/usermanagement/update/' + ${customerDetalis.id}" method="post">
+        <div class="form-row">
+            <div class="form-group">
+                <!--                <label for="first_name">First Name</label>-->
+                <!--                <input type="text"  id="first_name" name="firstName" th:text="${customerDetalis.firstName}" />-->
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="firstName" th:value="${customerDetalis.firstName}" />
+            </div>
+            <div class="form-group">
+                <label for="middle_name">Middle Name</label>
+                <input type="text" id="middle_name" name="middleName" th:value="${customerDetalis.middleName}"/>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="lastName" th:value="${customerDetalis.lastName}"/>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="mobile_number">Mobile Number</label>
+                <input type="text" id="mobile_number" name="mobile" th:value="${customerDetalis.mobile}" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" th:value="${customerDetalis.email}" />
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" th:value="${customerDetalis.gender}">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="O">Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="date_of_birth">Date of Birth</label>
+                <input type="date" id="date_of_birth" name="dateOfBirth"  th:value="${customerDetalis.dob}"/>
+            </div>
+            <div class="form-group">
+                <label for="adhaar_card">Adhaar Card</label>
+                <input type="text" id="adhaar_card" name="aadharNo" th:value="${customerDetalis.adhaar}"/>
+            </div>
+        </div>
+
+        <!--        <div class="form-group">-->
+        <!--            <label for="address">Address</label>-->
+        <!--            <textarea id="address" name="address" th:value="${customerDetalis.address}"></textarea>-->
+        <!--        </div>-->
+        <div class="form-row">
+            <!--            <div class="form-group">-->
+            <!--                <label for="pincode">Pincode</label>-->
+            <!--                <input type="text" id="pincode" name="pinCode"  th:value="${customerDetalis.pinCode}"/>-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="user_name">Username</label>-->
+            <!--                <input type="text" id="user_name" name="userName"  th:value="${customerDetalis.userName}"/>-->
+            <!--            </div>-->
+            <!--            <div class="form-group">-->
+            <!--                <label for="account_type">Account Type</label>-->
+            <!--                <select id="account_type" name="accType" th:value="${customerDetalis.accType}">-->
+            <!--                    <option value="Savings">Savings</option>-->
+            <!--                    <option value="Current">Current</option>-->
+            <!--                    <option value="Fixed Deposit">Fixed Deposit</option>-->
+            <!--                    <option value="Recurring Deposit">Recurring Deposit</option>-->
+            <!--                </select>-->
+            <!--            </div>-->
+            <!-- <div class="form-group">
+                      <label for="user_role">User Role</label>
+                      <select id="user_role" name="user_role" required>
+                          <option value="Admin">Admin</option>
+                          <option value="Employee">Employee</option>
+                          <option value="Customer">Customer</option>
+                      </select>
+                  </div> -->
+        </div>
+
+        <!--        <div class="form-row">-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="password">Password</label>-->
+        <!--                <input type="password" id="password" name="password" th:value="${customerDetalis.password}"/>-->
+        <!--            </div>-->
+        <!--            <div class="form-group">-->
+        <!--                <label for="password">Conform Password</label>-->
+        <!--                <input type="password"  />-->
+        <!--            </div>-->
+
+        <!--            &lt;!&ndash;      <div class="form-group">&ndash;&gt;-->
+        <!--            &lt;!&ndash;        <label for="balance">Balance</label>&ndash;&gt;-->
+        <!--            &lt;!&ndash;        <input type="number" id="balance" name="balance" required />&ndash;&gt;-->
+        <!--            &lt;!&ndash;      </div>&ndash;&gt;-->
+        <!--        </div>-->
+        <button type="submit">Register</button>
+    </form>
+</div>
+<!--<script src="registration.js"></script>-->
+</body>
+</html>

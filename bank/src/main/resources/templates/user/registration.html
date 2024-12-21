@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="/css/user/registration.css"/>
+</head>
+<body>
+<div class="container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm" th:action="@{/admin/dashboard/usermanagement/register}" th:object="${userRequestDto}" method="POST">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" th:field="*{firstName}" required />
+      </div>
+      <div class="form-group">
+        <label for="middle_name">Middle Name</label>
+        <input type="text" id="middle_name" th:field="*{middleName}" />
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" th:field="*{lastName}" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="mobile_number">Mobile Number</label>
+        <input type="text" id="mobile_number" th:field="*{mobile}" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" th:field="*{email}" required />
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" th:field="*{gender}" required>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="O">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="date_of_birth">Date of Birth</label>
+        <input type="date" id="date_of_birth" th:field="*{dateOfBirth}" required />
+      </div>
+      <div class="form-group">
+        <label for="adhaar_card">Adhaar Card</label>
+        <input type="text" id="adhaar_card" th:field="*{adhaarCard}" required />
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea id="address" th:field="*{address}" required></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" th:field="*{pincode}" required />
+      </div>
+      <div class="form-group">
+        <label for="user_name">Username</label>
+        <input type="text" id="user_name" th:field="*{userName}" required />
+      </div>
+      <div class="form-group">
+        <label for="account_type">Account Type</label>
+        <select id="account_type" th:field="*{accountType}" required>
+          <option value="Savings">Savings</option>
+          <option value="Current">Current</option>
+          <option value="Fixed Deposit">Fixed Deposit</option>
+          <option value="Recurring Deposit">Recurring Deposit</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="user_role">State</label>
+        <select id="user_role"  th:field="*{state}" required>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="user_role">District</label>
+        <select id="user_role" th:field="*{district}" required>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Lucknow">Lucknow</option>
+          <option value="Indore">Indore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="user_role">City</label>
+        <select id="user_role" th:field="*{city}" required>
+          <option value="Nagpur">Nagpur</option>
+          <option value="Lucknow">Lucknow</option>
+          <option value="Indore">Indore</option>
+        </select>
+        </div>
+        </div>
+
+
+
+      <div class="form-row">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" th:field="*{password}"   required />
+      </div>
+      <div class="form-group">
+        <label for="password">Conform Password</label>
+        <input type="password" id="password"  required />
+      </div>
+
+      <!--      <div class="form-group">-->
+      <!--        <label for="balance">Balance</label>-->
+      <!--        <input type="number" id="balance" name="balance" required />-->
+      <!--      </div>-->
+      </div>
+    <div class="form-group">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
+

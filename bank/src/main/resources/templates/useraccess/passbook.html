@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <title> Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/admin/style.css" />
+    <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+</head>
+<body>
+<input type="checkbox" id="menu-toggle" />
+<div class="sidebar">
+    <div class="side-header">
+        <h3>J<span>an Seva Bank</span></h3>
+    </div>
+
+    <div class="side-content">
+        <div class="profile">
+            <div
+                    class="profile-img bg-img"
+                    style="background-image: url(/images/admin/3.jpeg)"></div>
+            <h4>Pranav</h4>
+            <small>User</small>
+        </div>
+
+        <div class="side-menu">
+            <ul>
+                <li>
+                    <a href="/user/dashboard">
+                        <span class="las la-home"></span>
+                        <small>Dashboard</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/passbook">
+                        <span class="las la-user-alt"></span>
+                        <small>PassBook</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/transfermoney">
+                        <span class="las la-users"></span>
+                        <small>Transfer Money</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/user/accounts">
+                        <span class="las la-hand-holding-usd"></span>
+                        <small>Accounts</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="las la-cog"></span>
+                        <small>Settings</small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="main-content">
+    <header>
+        <div class="header-content">
+            <label for="menu-toggle">
+                <span class="las la-bars///"></span>
+            </label>
+
+            <div class="header-menu">
+                <label for="">
+                    <span class="las la-search///"></span>
+                </label>
+
+                <div class="notify-icon//">
+                    <span class="las la-envelope///"></span>
+                    <span class="notify"></span>
+                </div>
+
+                <div class="notify-icon//">
+                    <span class="las la-bell////"></span>
+                    <span class="notify////"></span>
+                </div>
+
+                <div class="user">
+                    <!--          <div class="bg-img" style="background-image: url(/images/admin/3.jpeg)"></div>-->
+                    <span class="las la-power-off"></span>
+                    <span>Logout</span>
+                </div>
+            </div>
+    </header>
+
+    <main>
+        <div class="records table-responsive">
+<!--            <div class="record-header">-->
+<!--                <div class="add">-->
+<!--                    <a th:href="@{'/admin/dashboard/usermanagement/addaccountregistration/' + ${customerDetalis.id}}">Add Account</a>-->
+<!--                </div>-->
+<!--                <</div>-->
+            <div class="page-header">
+                <h4>Name: <small  th:text="${customerDetalis.firstName}"> </small></h4>
+                <h4>Email: <small th:text="${customerDetalis.email}">  </small></h4>
+                <h4>Mobile:  <small th:text="${customerDetalis.mobile}"> </small></h4>
+                <h4>  Gender: <small th:text="${customerDetalis.gender}">  </small></h4>
+                <h4> Address: <small th:text="${customerDetalis.address}"> </small></h4>
+                <h4> Pincode:<small th:text="${customerDetalis.pincode}"> </small></h4>
+                <h4> IFSC Code:<small th:text="${userResponseDto.ifsc}"> </small></h4>
+                <h4> Branch Name:<small th:text="${userResponseDto.branchName}"> </small></h4>
+            </div>
+
+            <div class="page-content">
+                <div class="analytics">
+
+
+                </div>
+
+                <div>
+<!--                    <table width="100%">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>CIN</th>-->
+<!--                            <th>Account Type</th>-->
+<!--                            <th>Account Number</th>-->
+<!--                            <th>Opening Date</th>-->
+<!--                            <th>Balance</th>-->
+<!--                            <th>Action</th>-->
+
+<!--                        </tr>-->
+<!--                        </thead>-->
+
+<!--                        <tbody>-->
+<!--                        <tr th:each="user : ${customerDetailsFromAccount}">-->
+<!--                            <td th:text="${customerDetalis.cin}"></td>-->
+<!--                            <td th:text="${user.accType}"></td>-->
+<!--                            <td th:text="${user.accNo}"></td>-->
+<!--                            <td th:text="${user.openingDate}"></td>-->
+<!--                            <td th:text="${user.balance}"></td>-->
+<!--                            <td>-->
+<!--                                <div class="actions">-->
+<!--                                    <a th:href="'/admin/dashboard/customerdetails/delete/'+ ${user .accNo}">-->
+<!--                                        <span class="las la-trash"></span>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            <td/>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
